@@ -11,7 +11,7 @@
 		2BD6A42B1DB95B0300E2781F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6A42A1DB95B0300E2781F /* ViewController.swift */; };
 		2BD6A42E1DB95B0300E2781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6A42C1DB95B0300E2781F /* Main.storyboard */; };
 		2BD6A4301DB95B0300E2781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6A42F1DB95B0300E2781F /* Assets.xcassets */; };
-		2BD6A4331DB95B0300E2781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6A4311DB95B0300E2781F /* LaunchScreen.storyboard */; };
+		46E7AB1206FE001D9F028663 /* Pods_StarscreamCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90CFE728C5D28E07B79C1E1 /* Pods_StarscreamCrash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,8 +20,10 @@
 		2BD6A42A1DB95B0300E2781F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2BD6A42D1DB95B0300E2781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BD6A42F1DB95B0300E2781F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2BD6A4321DB95B0300E2781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BD6A4341DB95B0300E2781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53599872D5AA28CDB8F790F9 /* Pods-StarscreamCrash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarscreamCrash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarscreamCrash/Pods-StarscreamCrash.debug.xcconfig"; sourceTree = "<group>"; };
+		E90CFE728C5D28E07B79C1E1 /* Pods_StarscreamCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarscreamCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C4897C01E65B8ADA22F36E /* Pods-StarscreamCrash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarscreamCrash.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarscreamCrash/Pods-StarscreamCrash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E7AB1206FE001D9F028663 /* Pods_StarscreamCrash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,8 @@
 			children = (
 				2BD6A4271DB95B0300E2781F /* StarscreamCrash */,
 				2BD6A4261DB95B0300E2781F /* Products */,
+				5AF7F5D1FCCC081623DC8FF1 /* Pods */,
+				D165E0D6B8BAE64C3991147F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +63,26 @@
 				2BD6A42A1DB95B0300E2781F /* ViewController.swift */,
 				2BD6A42C1DB95B0300E2781F /* Main.storyboard */,
 				2BD6A42F1DB95B0300E2781F /* Assets.xcassets */,
-				2BD6A4311DB95B0300E2781F /* LaunchScreen.storyboard */,
 				2BD6A4341DB95B0300E2781F /* Info.plist */,
 			);
 			path = StarscreamCrash;
+			sourceTree = "<group>";
+		};
+		5AF7F5D1FCCC081623DC8FF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53599872D5AA28CDB8F790F9 /* Pods-StarscreamCrash.debug.xcconfig */,
+				F8C4897C01E65B8ADA22F36E /* Pods-StarscreamCrash.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D165E0D6B8BAE64C3991147F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E90CFE728C5D28E07B79C1E1 /* Pods_StarscreamCrash.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BD6A4371DB95B0300E2781F /* Build configuration list for PBXNativeTarget "StarscreamCrash" */;
 			buildPhases = (
+				A06AC12005A382B121965228 /* [CP] Check Pods Manifest.lock */,
 				2BD6A4211DB95B0300E2781F /* Sources */,
 				2BD6A4221DB95B0300E2781F /* Frameworks */,
 				2BD6A4231DB95B0300E2781F /* Resources */,
+				1292CB46E52107763953BB42 /* [CP] Embed Pods Frameworks */,
+				3C9E35C52DF01A092E4372B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,13 +148,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD6A4331DB95B0300E2781F /* LaunchScreen.storyboard in Resources */,
 				2BD6A4301DB95B0300E2781F /* Assets.xcassets in Resources */,
 				2BD6A42E1DB95B0300E2781F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1292CB46E52107763953BB42 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StarscreamCrash/Pods-StarscreamCrash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C9E35C52DF01A092E4372B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StarscreamCrash/Pods-StarscreamCrash-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A06AC12005A382B121965228 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BD6A4211DB95B0300E2781F /* Sources */ = {
@@ -151,14 +222,6 @@
 				2BD6A42D1DB95B0300E2781F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2BD6A4311DB95B0300E2781F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BD6A4321DB95B0300E2781F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,27 +322,31 @@
 		};
 		2BD6A4381DB95B0300E2781F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53599872D5AA28CDB8F790F9 /* Pods-StarscreamCrash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H7TG4MJ93Z;
 				INFOPLIST_FILE = StarscreamCrash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaf.StarscreamCrash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		2BD6A4391DB95B0300E2781F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8C4897C01E65B8ADA22F36E /* Pods-StarscreamCrash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H7TG4MJ93Z;
 				INFOPLIST_FILE = StarscreamCrash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.chaf.StarscreamCrash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -302,6 +369,7 @@
 				2BD6A4391DB95B0300E2781F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
