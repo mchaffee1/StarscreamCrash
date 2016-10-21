@@ -1,8 +1,8 @@
 import UIKit
 import Starscream
 
-let invalidPingSeconds = 2.0
-let pingTimeInterval = 1.0
+let invalidPingSeconds = 3.0
+let pingTimeInterval = 0.1
 
 class ViewController: UIViewController {
     private typealias `Self` = ViewController
