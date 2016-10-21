@@ -5,11 +5,11 @@ let invalidPingSeconds = 3.0
 let pingTimeInterval = 0.1
 
 class ViewController: UIViewController {
-    private typealias `Self` = ViewController
+    fileprivate typealias `Self` = ViewController
     
     var socket: WebSocket?
     let protocolName = "protocolName"
-    var pingTimer = NSTimer()
+    var pingTimer = Timer()
     
     @IBOutlet weak var badUrlTextField: UITextField?
     @IBOutlet weak var goodUrlTextField: UITextField?
@@ -18,29 +18,29 @@ class ViewController: UIViewController {
     var invalidUrlString: String { return badUrlTextField?.text ?? "" }
     var validUrlString: String { return goodUrlTextField?.text ?? "" }
     
-    @IBAction func startButton_touchUpInside(sender: AnyObject) {
+    @IBAction func startButton_touchUpInside(_ sender: AnyObject) {
         runTest()
     }
     
-    @IBAction func stopButton_touchUpInside(sender: AnyObject) {
+    @IBAction func stopButton_touchUpInside(_ sender: AnyObject) {
         stopPing()
     }
     
     func runTest() {
         startPing(invalidUrlString)
         
-        let _ = NSTimer.scheduledTimerWithTimeInterval(invalidPingSeconds, repeats: false, block: { _ in
+        let _ = Timer.scheduledTimer(withTimeInterval: invalidPingSeconds, repeats: false, block: { _ in
             self.stopPing()
             self.startPing(self.validUrlString)
         })
     }
      
-    func startPing(urlString: String) {
+    func startPing(_ urlString: String) {
         stopPing()
         showMessage("startPing(\(urlString)) called")
         self.socket = createWebsocket(urlString)
         
-        self.pingTimer = NSTimer.scheduledTimerWithTimeInterval(pingTimeInterval, target: self, selector: #selector(Self.pingOnce), userInfo: nil, repeats: true)
+        self.pingTimer = Timer.scheduledTimer(timeInterval: pingTimeInterval, target: self, selector: #selector(Self.pingOnce), userInfo: nil, repeats: true)
     }
     
     func stopPing() {
@@ -55,8 +55,8 @@ class ViewController: UIViewController {
             connectSocket()
         }
         
-        showMessage("pinging \(socket.urlString ?? "(no socket)")")
-        socket.writePing(NSData())
+        showMessage("pinging \(socket.currentURL.absoluteString)")
+        socket.write(ping: Data())
     }
     
     func connectSocket() {
@@ -64,14 +64,14 @@ class ViewController: UIViewController {
             showMessage("can't connect: nil socket")
             return
         }
-        showMessage("connecting to \(socket.urlString ?? "(no socket)")")
+        showMessage("connecting to \(socket.currentURL.absoluteString)")
         socket.connect()
     }
     
-    func createWebsocket(urlString: String?) -> WebSocket? {
+    func createWebsocket(_ urlString: String?) -> WebSocket? {
         showMessage("createWebsocket(\(urlString)) called")
         let urlString = urlString ?? ""
-        guard let url = NSURL(string: urlString) else {
+        guard let url = URL(string: urlString) else {
             showMessage("could not create url for \(urlString)")
             return nil
         }
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         return result
     }
     
-    func showMessage(message: String) {
+    func showMessage(_ message: String) {
         guard let textView = self.textView else { return }
         textView.text = textView.text + message + "\n"
         let range = NSMakeRange(textView.text.characters.count - 1, 0)
@@ -102,19 +102,19 @@ extension ViewController: WebSocketDelegate {
         showMessage("received message from \(socket.urlString): \(text)")
     }
     
-    func websocketDidReceiveData(socket: WebSocket, data: NSData) {
+    func websocketDidReceiveData(socket: WebSocket, data: Data) {
         showMessage("received data from \(socket.urlString)")
     }
 }
 
 extension ViewController: WebSocketPongDelegate {
-    func websocketDidReceivePong(socket: WebSocket) {
+    func websocketDidReceivePong(socket: WebSocket, data: Data?) {
         showMessage("received PONG from \(socket.urlString)")
     }
 }
 
 extension WebSocket {
     public var urlString: String {
-        return self.currentURL.absoluteString ?? "(none)"
+        return self.currentURL.absoluteString 
     }
 }

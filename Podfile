@@ -6,5 +6,5 @@ target 'StarscreamCrash' do
   use_frameworks!
 
   # Pods for StarscreamCrash
-  pod 'Starscream', '1.1.4'
+  pod 'Starscream', '~> 2.0.0'
 end
