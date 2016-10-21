@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ws://192.168.234.21" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-1h-B7d">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ws://10.101.31.68:7979" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-1h-B7d">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
@@ -52,12 +52,22 @@
                                     <action selector="startButton_touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3OW-Yi-Veg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-i8-yYb">
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton_touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JPN-IZ-JMg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Uz4-cY-kRV" secondAttribute="leading" id="3Di-1G-ATk"/>
+                            <constraint firstItem="EWh-i8-yYb" firstAttribute="trailing" secondItem="qtL-14-VDn" secondAttribute="trailing" id="4gM-Lc-zOT"/>
                             <constraint firstItem="qtL-14-VDn" firstAttribute="top" secondItem="oBV-1h-B7d" secondAttribute="bottom" constant="8" id="FHQ-2a-eli"/>
                             <constraint firstItem="lA9-4C-eWO" firstAttribute="leading" secondItem="qgG-MF-wsB" secondAttribute="leading" id="HTp-25-A6r"/>
+                            <constraint firstItem="EWh-i8-yYb" firstAttribute="top" secondItem="qtL-14-VDn" secondAttribute="bottom" constant="7" id="J4k-5g-fov"/>
                             <constraint firstItem="oBV-1h-B7d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LYe-7Y-evk"/>
                             <constraint firstItem="qgG-MF-wsB" firstAttribute="top" secondItem="Uz4-cY-kRV" secondAttribute="bottom" constant="17" id="QQo-C8-fJb"/>
                             <constraint firstItem="qgG-MF-wsB" firstAttribute="leading" secondItem="Uz4-cY-kRV" secondAttribute="leading" id="ZLW-3h-5IG"/>

@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         runTest()
     }
     
+    @IBAction func stopButton_touchUpInside(sender: AnyObject) {
+        stopPing()
+    }
+    
     func runTest() {
         startPing(invalidUrlString)
         
