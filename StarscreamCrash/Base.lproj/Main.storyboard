@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ws://10.101.31.68:7979" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-1h-B7d">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ws://8.8.8.8" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-1h-B7d">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
@@ -31,7 +31,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="wss://192.168.21.234" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtL-14-VDn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="wss://8.8.8.8" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtL-14-VDn">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
@@ -60,6 +60,12 @@
                                     <action selector="stopButton_touchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JPN-IZ-JMg"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Ji-j9-yA3">
+                                <segments>
+                                    <segment title="Slow"/>
+                                    <segment title="Fast"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -77,12 +83,15 @@
                             <constraint firstItem="oBV-1h-B7d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="i1t-HR-E5e"/>
                             <constraint firstItem="Uz4-cY-kRV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="iHb-LF-d4Y"/>
                             <constraint firstItem="qtL-14-VDn" firstAttribute="trailing" secondItem="oBV-1h-B7d" secondAttribute="trailing" id="nd0-gs-c5y"/>
+                            <constraint firstItem="7Ji-j9-yA3" firstAttribute="centerY" secondItem="lA9-4C-eWO" secondAttribute="centerY" id="oRN-9n-La7"/>
                             <constraint firstItem="oBV-1h-B7d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="27.5" id="uUy-VP-ikx"/>
+                            <constraint firstItem="7Ji-j9-yA3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wev-Qj-6Vn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="badUrlTextField" destination="oBV-1h-B7d" id="lmx-BR-BZZ"/>
                         <outlet property="goodUrlTextField" destination="qtL-14-VDn" id="q3Y-EE-lS7"/>
+                        <outlet property="speedSelector" destination="7Ji-j9-yA3" id="3pc-IM-U6P"/>
                         <outlet property="textView" destination="dlE-Sa-lGM" id="eI7-fc-ibU"/>
                     </connections>
                 </viewController>

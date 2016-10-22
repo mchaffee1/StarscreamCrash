@@ -2,7 +2,8 @@ import UIKit
 import Starscream
 
 let invalidPingSeconds = 3.0
-let pingTimeInterval = 0.1
+let slowPingTimeInterval = 1.0
+let fastPingTimeInterval = 0.1
 
 class ViewController: UIViewController {
     fileprivate typealias `Self` = ViewController
@@ -14,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var badUrlTextField: UITextField?
     @IBOutlet weak var goodUrlTextField: UITextField?
     @IBOutlet weak var textView: UITextView?
+    
+    @IBOutlet weak var speedSelector: UISegmentedControl!
     
     var invalidUrlString: String { return badUrlTextField?.text ?? "" }
     var validUrlString: String { return goodUrlTextField?.text ?? "" }
@@ -87,6 +90,17 @@ class ViewController: UIViewController {
         let range = NSMakeRange(textView.text.characters.count - 1, 0)
         textView.scrollRangeToVisible(range)
     }
+    
+    var pingTimeInterval: Double {
+        return self.selectedSpeed == .Fast ? fastPingTimeInterval : slowPingTimeInterval
+    }
+    
+    var selectedSpeed: SelectedSpeed {
+        let defaultSpeed = SelectedSpeed.Slow
+        guard let speedSelector = self.speedSelector else { return defaultSpeed }
+        
+        return SelectedSpeed(rawValue: speedSelector.selectedSegmentIndex) ?? defaultSpeed
+    }
 }
 
 extension ViewController: WebSocketDelegate {
@@ -117,4 +131,9 @@ extension WebSocket {
     public var urlString: String {
         return self.currentURL.absoluteString 
     }
+}
+
+enum SelectedSpeed: Int {
+    case Slow = 0
+    case Fast = 1
 }
