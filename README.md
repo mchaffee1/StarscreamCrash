@@ -13,5 +13,12 @@ exists in the newest version of Starscream (it does).
 ## Installation
 1. Clone this repo
 2. Run `pod install` in the project root directory
+3. Open, build, and run
 
-
+# The Crash
+Sadly it doesn't crash every time, so often a few runs are needed to see the
+crash actually happen, but here are the details:
+- `EXC_BAD_ACCESS`
+- `Queue: com.vluxe.starscream.websocket`
+- `Enqueued from com.apple.root.default-qos.overcommit (thread X)`
+- Thread `X` is `com.apple.CFStream.LegacyThread`
