@@ -1,3 +1,4 @@
+
 import UIKit
 import Starscream
 
@@ -32,12 +33,18 @@ class ViewController: UIViewController {
     func runTest() {
         startPing(invalidUrlString)
         
-        let _ = NSTimer.scheduledTimerWithTimeInterval(invalidPingSeconds, repeats: false, block: { _ in
-            self.stopPing()
+        waitAndThen {
             self.startPing(self.validUrlString)
+            self.waitAndThen { self.stopPing() }
+        }
+    }
+    
+    func waitAndThen(block: ()->()) {
+        let _ = NSTimer.scheduledTimerWithTimeInterval(invalidPingSeconds, repeats: false, block: { _ in
+            block()
         })
     }
-     
+    
     func startPing(urlString: String) {
         stopPing()
         showMessage("startPing(\(urlString)) called")
